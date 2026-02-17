@@ -39,4 +39,4 @@ chmod +x setup.sh
 - The camera feed streamed through FFmpeg comes from `/dev/video0`.
 
 # License
-This project is under the MIT License - set the [LICENSE](LICENSE) file for details.
+This project is under the MIT License - see the [LICENSE](LICENSE) file for details.
