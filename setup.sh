@@ -7,10 +7,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SERVICE_NAME="rtspStartup.service"
 
 echo "Script Directory: $SCRIPT_DIR"
-
-echo "Installing Curl"
 sudo apt update
-sudo apt install -y curl
+
+if ! command -v curl &> /dev/null
+then
+    echo "Curl not found, installing..."
+    sudo apt install -y curl
+fi
 
 echo "Cloning Repo"
 curl -L -o "$TAR_FILE" "$REPO_URL"
