@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TAR_FILE="/tmp/mediamtx-release.tar.gz"
-EXTRACT_DIR="$HOME/Pi-RTSP/"
+EXTRACT_DIR="$HOME/Pi-RTSP"
 REPO_URL="https://github.com/bluenviron/mediamtx/releases/download/v1.16.1/mediamtx_v1.16.1_linux_arm64.tar.gz"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -34,9 +34,6 @@ if [ $? -ne 0 ]; then
     echo "Failed to change permissions for executables"
     exit 1
 fi
-
-echo "Starting runRtsp.sh"
-bash "$EXTRACT_DIR/runRtsp.sh"
 
 read -p "Do you want to start the RTSP Server? (y/n): " answer
 if [[ "$answer" == [Yy] ]]; then
