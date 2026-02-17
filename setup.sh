@@ -13,6 +13,16 @@ if ! command -v curl &> /dev/null
 then
     echo "Curl not found, installing..."
     sudo apt install -y curl
+else
+    echo "Curl already installed"
+fi
+
+if ! command -v ffmpeg &> /dev/null
+then
+    echo "FFmpeg not found, installing..."
+    sudo apt install -y ffmpeg
+else
+    echo "FFmpeg already installed"
 fi
 
 echo "Cloning Repo"
