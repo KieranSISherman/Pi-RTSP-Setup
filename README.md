@@ -37,3 +37,6 @@ chmod +x setup.sh
 - MediaMTX will use the [mediamtx-rtsp.yml](mediamtx-rtsp.yml) config file when starting with [runRtsp.sh](runRtsp.sh). Running MediaMTX manually will run it with the default mediamtx.yml config.
 - The [mediamtx-rtsp.yml](mediamtx-rtsp.yml) config file disables all protocols besides rtsp.
 - The camera feed streamed through FFmpeg comes from `/dev/video0`.
+
+# License
+This project is under the MIT License - set the [LICENSE](LICENSE) file for details.
