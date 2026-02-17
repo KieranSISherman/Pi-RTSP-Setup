@@ -23,6 +23,7 @@ echo "Extracting Tarball"
 mkdir -p "$EXTRACT_DIR"
 tar -xzf "$TAR_FILE" -C "$EXTRACT_DIR"
 cp "$SCRIPT_DIR/runRtsp.sh" "$EXTRACT_DIR/runRtsp.sh"
+cp "$SCRIPT_DIR/mediamtx-rtsp.yml" "$EXTRACT_DIR/mediamtx-rtsp.yml"
 if [ $? -ne 0 ]; then
     echo "Failed to extract release tarball"
     exit 1
