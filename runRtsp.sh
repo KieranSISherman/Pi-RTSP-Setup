@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EXEC_DIR="$HOME/Pi-RTSP"
-FFMPEG_CMD="ffmpeg -f v4l2 -input_format mjpeg -video_size 1920x1080 -framerate 30 -i /dev/video0 -vcodec libx264 -preset ultrafast -tune zerolatency -f rtsp -rtsp_transport tcp rtsp://localhost:8554/stream"
+FFMPEG_CMD="ffmpeg -f v4l2 -input_format mjpeg -video_size 1280x720 -framerate 30 -i /dev/video0 -vcodec libx264 -preset ultrafast -tune zerolatency -f rtsp -rtsp_transport tcp rtsp://localhost:8554/stream"
 
 echo "Starting RTSP Server"
 "$EXEC_DIR/mediamtx" "$EXEC_DIR/mediamtx-rtsp.yml" &
