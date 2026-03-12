@@ -10,6 +10,11 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+if [ -e "$SERVICE_FILE" ]; then
+    echo "Failed to remove service file at: $SERVICE_FILE\nTry again using sudo"
+    exit 1
+fi
+
 echo "Removing Pi-RTSP directory"
 rm -rf "$RTSP_DIR"
 if [ $? -ne 0 ]; then
