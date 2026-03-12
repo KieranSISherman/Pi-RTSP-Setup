@@ -72,7 +72,7 @@ ExecStart=$EXTRACT_DIR/runRtsp.sh
 WorkingDirectory=$EXTRACT_DIR
 User=$TARGET_USER
 Group=$TARGET_USER
-Restart=on-failure
+Restart=no
 
 [Install]
 WantedBy=multi-user.target
