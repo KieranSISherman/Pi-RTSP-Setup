@@ -43,6 +43,18 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+if [[ -f "config.env" ]]; then
+    echo "Copying config.env"
+    cp "$SCRIPT_DIR/config.env" "$EXTRACT_DIR/config.env"
+    if [ -? -ne 0 ]; then
+        echo "Failed to copy config.env"
+        exit 1
+    fi
+else
+    echo "Could not find 'config.env'"
+    exit 1;
+fi
+
 echo "Changing Permissions of Executables"
 chmod +x "$EXTRACT_DIR/mediamtx"
 chmod +x "$EXTRACT_DIR/runRtsp.sh"

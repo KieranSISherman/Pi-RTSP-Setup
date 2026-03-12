@@ -1,4 +1,6 @@
 # Raspberry Pi 4 RTSP Camera Stream Setup
+**Linux Only**
+
 This project installs MediaMTX onto a raspberry pi 4 to run an RTSP server. The project uses a USB camera *(obsbot tiny se specifically)* and has not been tested with any other devices. MediaMTX is used to run an RTSP server on the LAN while FFmpeg is used to stream the camera feed from `/dev/video0` to the server. The purpose of this project is to automate the installation and startup of these tools so that they automatically start on boot.
 
 ## Installation
@@ -20,6 +22,9 @@ The version of MediaMTX that will be installed is specific for 64-bit ARM (aarch
 3. Follow prompts given during setup
 - The first prompt will ask if you want to launch the RTSP server and FFmpeg stream on startup.
 - The second will ask if you want to launch the RTSP server and FFmpeg stream. If you don't, you can manually start it using `~/Pi-RTSP/runRtsp.sh`. If you chose for it to start on boot, then you can simply reboot your system and it will run in the background.
+4. Setup audio config file
+- This is for [config.env.template](config.env.template). Copy this file into `config.env` and set the card and dev value for your audio stream.
+- You can find the card and dev values on your device by running `arecord -L`.
 
 ```bash
 git clone https://github.com/KieranSISherman/Pi-RTSP-Setup.git
