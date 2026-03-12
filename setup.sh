@@ -37,6 +37,7 @@ mkdir -p "$EXTRACT_DIR"
 tar -xzf "$TAR_FILE" -C "$EXTRACT_DIR"
 cp "$SCRIPT_DIR/runRtsp.sh" "$EXTRACT_DIR/runRtsp.sh"
 cp "$SCRIPT_DIR/mediamtx-rtsp.yml" "$EXTRACT_DIR/mediamtx-rtsp.yml"
+cp "$SCRIPT_DIR/removeInstallation.sh" "$EXTRACT_DIR/removeInstallation.sh"
 if [ $? -ne 0 ]; then
     echo "Failed to extract release tarball"
     exit 1
@@ -45,6 +46,7 @@ fi
 echo "Changing Permissions of Executables"
 chmod +x "$EXTRACT_DIR/mediamtx"
 chmod +x "$EXTRACT_DIR/runRtsp.sh"
+chmod +x "$EXTRACT_DIR/removeInstallation.sh"
 if [ $? -ne 0 ]; then
     echo "Failed to change permissions for executables"
     exit 1
