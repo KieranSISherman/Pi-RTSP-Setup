@@ -11,7 +11,8 @@ if [ $? -ne 0 ]; then
 fi
 
 if [ -e "$SERVICE_FILE" ]; then
-    echo "Failed to remove service file at: $SERVICE_FILE\nTry again using sudo"
+    echo "Failed to remove service file at: $SERVICE_FILE"
+    echo "Try again using sudo"
     exit 1
 fi
 
