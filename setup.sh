@@ -79,13 +79,14 @@ if [[ "$startupAnswer" == [Yy] ]]; then
     sudo bash -c "cat > /etc/systemd/system/$SERVICE_NAME" <<EOF
 [Unit]
 Description=Auto-start mediamtx and ffmpeg rtsp for camera streaming
-After=network.target
+After=network-online.target sound.target pulseaudio.target
+Wants=network-online.target pulseaudio.target
 
 [Service]
-ExecStart=$EXTRACT_DIR/runRtsp.sh
-WorkingDirectory=$EXTRACT_DIR
-User=$TARGET_USER
-Group=$TARGET_USER
+ExecStart=/home/vex/Pi-RTSP/runRtsp.sh
+WorkingDirectory=/home/vex/Pi-RTSP
+User=vex
+Group=vex
 Restart=no
 
 [Install]
